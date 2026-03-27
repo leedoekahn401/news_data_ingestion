@@ -91,6 +91,8 @@ if st.button("Extract Data", type="primary"):
                     contents=prompt
                 )
                 data = json.loads(response.text)
+                data["link"] = prompt
+                data["flag"] = 0
                 st.session_state.extracted_json = data
                 
             except Exception as e:
